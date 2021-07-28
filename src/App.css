@@ -1,0 +1,66 @@
+.App {
+  height: 100vh;
+}
+
+.Available {
+  border: 2px solid #6FCF97;
+}
+
+.Busy {
+  border: 2px solid #F2994A;
+}
+
+.Unavailable {
+  border: 2px solid #EB5757;
+  opacity: 0.5;
+}
+
+.bicycle-wrap {
+  position: relative;
+  padding: 12px 12px 12px 18px;
+  margin: 9px 9px 12px 12px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: #E8E8E8;
+}
+
+.bicycle-info {
+  width: 350px;
+}
+
+.info {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333333;
+}
+
+.info-name {
+  font-weight: bold;
+}
+
+.info-id {
+  font-size: 14px;
+  line-height: 13px;
+  color: #717171;
+}
+
+.status-info__wrap{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bicycle-price{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-remove {
+  outline: none;
+  background-color: #E8E8E8;
+  border: none;
+  line-height: 30px;
+}
