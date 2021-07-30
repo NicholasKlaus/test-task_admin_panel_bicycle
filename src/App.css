@@ -2,6 +2,46 @@
   height: 100vh;
 }
 
+.divider-y {
+  border-right: 1px solid #C4C4C4;
+}
+
+.divider-x {
+  border-top: 1px solid #C4C4C4;
+}
+
+.panel {
+  min-height: 634px;
+}
+
+/* Header, Footer */
+
+.header {
+  min-height: 42px;
+  padding: 4px 16px;
+  color: #E8E8E8;
+  background: #696969;
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: normal;
+}
+
+.footer {
+  min-height: 42px;
+  padding: 4px 16px;
+  color: #CBCACA;
+  background: #696969;
+  font-size: 20px;
+  line-height: 31px;
+  text-align: end;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+/* Bicycle list style */
+
 .Available {
   border: 2px solid #6FCF97;
 }
@@ -59,8 +99,65 @@
 }
 
 .btn-remove {
+  padding-bottom: 15px;
   outline: none;
   background-color: #E8E8E8;
   border: none;
-  line-height: 30px;
+}
+
+/* Form style */
+
+.form {
+  padding-bottom: 16px;
+}
+
+.form-input {
+  margin: 10px;
+  min-width: 240px;
+  padding: 5px 10px 5px 10px;
+  background: #E8E8E8;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-textarea {
+  min-width: 500px;
+  min-height: 75px;
+}
+
+.form-btn__wrap {
+  margin: 0 10px 0 10px;
+}
+
+.form-btn {
+  min-width: 245px;
+  outline: none;
+  background: #696969;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.btn-save {
+  margin-right: 11px;
+}
+
+/* statistics */
+
+.statistics {
+  max-width: 500px;
+  margin-left: 22px;
+  padding-top: 10px;
+}
+
+.statistics-title {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  color: black;
+}
+
+.statistics-wrap {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
 }

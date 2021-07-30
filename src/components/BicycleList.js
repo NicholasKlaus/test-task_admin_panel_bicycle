@@ -1,15 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Bicycle } from './Bicycle';
 
-export const BicycleList = () => {
-  const {bicycles} = useSelector(({bicycles}) => bicycles);
-  console.log(bicycles);
-
+export const BicycleList = ({bikes}) => {
+ 
   return (
     <div className="list">
       {
-        bicycles.map(bicycle => <Bicycle bicycle={bicycle} key={bicycle.id} />)
+        bikes.bicycles.map((bicycle, key) => <Bicycle bicycle={bicycle} key={key} />)
       }
     </div>
   );

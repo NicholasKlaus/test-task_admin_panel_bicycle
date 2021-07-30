@@ -1,5 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import './icofont/icofont.min.css';
 @import "./App.css";
+
 
 body {
   margin: 0;
