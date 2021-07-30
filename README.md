@@ -1,6 +1,5 @@
 ## Befor Start
-Before you begin make sure you install all the necessary modules as needed to run the project in development mode, if not then you need to enter `npm install` in the terminal & in the project directory.
-
+Before you begin make sure you install all the necessary modules as needed to run the project in development mode, if not then you need to enter `npm install` in the terminal.
 ## Available Scripts
 In the project directory, you can run:
 
