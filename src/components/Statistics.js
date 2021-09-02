@@ -1,9 +1,14 @@
-import React, { useContext, useEffect } from 'react';
-import { Context } from '../context/Context';
+import React, { useEffect, useState } from 'react';
 
 export const Statistics = ({bikes}) => {
-  const { totalBikes, avaibleBikes, bookedBikes, averageBikeCost, bicycles } = bikes;
-  const { avarageSum } = useContext(Context);
+  const [averageBikeCost, setAverageBikeCost] = useState(0);
+  const [totalBikes, setTotalBikes] = useState(0);
+  const [bookedBikes, setBookedBikes] = useState(0);
+  const [avaibleBikes, setAvaibleBikes] = useState(0);
+
+  function getStatus(item) {
+    return item.status;
+  }
   
   function getPopularity(item) {
     return item.price;
@@ -14,11 +19,16 @@ export const Statistics = ({bikes}) => {
   }
 
   useEffect(() => {
-    const PriceScores = bicycles.map(getPopularity);
+    const arrStatus = bikes.map(getStatus);
+    const statusAvailable = arrStatus.filter(el => el === "Available");
+    const statusBusy = arrStatus.filter(el => el === "Busy");
+    const PriceScores = bikes.map(getPopularity);
     const scoresTotal = PriceScores.reduce(addScores, 0);
-    const averagePrice = scoresTotal / PriceScores.length;
-    avarageSum(averagePrice);
-  }, [bicycles])
+    setAverageBikeCost(scoresTotal / PriceScores.length);
+    setTotalBikes(bikes.length);
+    setAvaibleBikes(statusAvailable.length);
+    setBookedBikes(statusBusy.length);
+  }, [bikes])
 
 
   return (

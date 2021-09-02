@@ -1,4 +1,4 @@
-.App {
+html, body, #root, .App {
   height: 100vh;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .panel {
-  min-height: 634px;
+  min-height: calc(100vh - 87.6px);
 }
 
 /* Header, Footer */

@@ -3,53 +3,18 @@ import { Context } from '../context/Context';
 
 export const Bicycle = ({bicycle}) => {
   const [status, setStatus] = useState('Available');
-  const { 
-    delAvailableItem,
-    delBusyItem, 
-    delUnavailableItem,
-    switchStatusFromAvailableToBusy,
-    switchStatusFromAvailableToUnavailable,
-    switchStatusFromBusyToAvailable,
-    switchStatusFromBusyToUnavailable,
-    switchStatusFromUnavailableToAvailable,
-    switchStatusFromUnavailableToBusy
-  } = useContext(Context);
+  const { changeStatus, delItem } = useContext(Context);
 
   const delBicycle = () => {
-    if(bicycle.status === "Available") {
-      delAvailableItem(bicycle.id);
-    }
-    if (bicycle.status === "Busy") {
-      delBusyItem(bicycle.id);
-    }
-    if (bicycle.status === "Unavailable") {
-      delUnavailableItem(bicycle.id);
-    }
+    delItem(bicycle.id);
   }
 
   useEffect(() => {
-    if (bicycle.status === "Available" && status === "Busy") {
-      switchStatusFromAvailableToBusy(bicycle.id);
-    }
-    if (bicycle.status === "Available" && status === "Unavailable") {
-      switchStatusFromAvailableToUnavailable(bicycle.id);
-    }
-    if (bicycle.status === "Busy" && status === "Available") {
-      switchStatusFromBusyToAvailable(bicycle.id);
-    }
-    if (bicycle.status === "Busy" && status === "Unavailable") {
-      switchStatusFromBusyToUnavailable(bicycle.id);
-    }
-    if (bicycle.status === "Unavailable" && status === "Available") {
-      switchStatusFromUnavailableToAvailable(bicycle.id);
-    }
-    if (bicycle.status === "Unavailable" && status === "Busy") {
-      switchStatusFromUnavailableToBusy(bicycle.id);
-    }
-  }, [bicycle.status, bicycle.id, status])
+    changeStatus(bicycle.id, status);
+  }, [bicycle.id, status])
 
   return (
-    <div className={ status === "Available" ? "bicycle-wrap Available": status === "Busy" ? "bicycle-wrap Busy" : status === "Unavailable" ? "bicycle-wrap Unavailable" : "bicycle-wrap Available"}>
+    <div className={ bicycle.status === "Available" ? "bicycle-wrap Available": bicycle.status === "Busy" ? "bicycle-wrap Busy" : bicycle.status === "Unavailable" ? "bicycle-wrap Unavailable" : "bicycle-wrap Available"}>
       <div className="bicycle-info">
         <div>
           <div>

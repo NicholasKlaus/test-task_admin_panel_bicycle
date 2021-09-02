@@ -6,7 +6,7 @@ export const BicycleList = ({bikes}) => {
   return (
     <div className="list">
       {
-        bikes.bicycles.map((bicycle, key) => <Bicycle bicycle={bicycle} key={key} />)
+        bikes.map((bicycle, key) => <Bicycle bicycle={bicycle} key={key} />)
       }
     </div>
   );
